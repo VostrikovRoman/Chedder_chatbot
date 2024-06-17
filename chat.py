@@ -163,9 +163,9 @@ def bot_message(message):
         ## фотографии снэков ##
             
         ## Фотографии напитков ##
-        elif message.text == 'Облипиховый морс':
+        elif message.text == 'Облепиховый морс':
             margarita = open('18.jpg', 'rb')
-            bot.send_photo(message.chat.id, margarita,'Облипиховый морс\n\nСостав: облипиха, вода, сахар\nОбъём: 400мл\nСтоимость: 105 ₽ ')
+            bot.send_photo(message.chat.id, margarita,'Облепиховый морс\n\nСостав: облепиха, вода, сахар\nОбъём: 400мл\nСтоимость: 105 ₽ ')
             
         elif message.text == 'Морс из чёрной смородины':
             margarita = open('17.jpg', 'rb')
