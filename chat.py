@@ -85,7 +85,7 @@ def bot_message(message):
                 
         elif message.text == '🥤  Напитки':
             markup = types.ReplyKeyboardMarkup(resize_keyboard = True)
-            obl = types.KeyboardButton('Облипиховый морс')
+            obl = types.KeyboardButton('Облепиховый морс')
             black_cur = types.KeyboardButton('Морс из чёрной смородины')
             cherry = types.KeyboardButton('Вишнёвый морс')
             btn_back_2 = types.KeyboardButton('🔙   Назад')
