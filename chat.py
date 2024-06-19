@@ -17,6 +17,9 @@ def main(message):
 
 @bot.message_handler(content_types=['text'])
 def bot_message(message):
+   # меню id, кол-во, цена  
+   
+    cart = [[1,2,3,4,5],[2,3,4,2,1],[100,200,1500,1000,500]]
     
     if message.chat.type == 'private':
         if message.text == 'ℹ️  О нас':
@@ -236,12 +239,6 @@ def bot_message(message):
             btn_add = types.InlineKeyboardButton (text="Добавить ✅",callback_data="btn_add")
             btn_del =types.InlineKeyboardButton (text="Удалить ❌",callback_data="btn_del") 
             inmenu.add(btn_add,btn_del)
-            
-            
-            
-            
-            
-            
             margarita = open('17.jpg', 'rb')
             bot.send_photo(message.chat.id, margarita,'Морс из чёрной смородины\n\nСостав: чёрная смородина, вода, сахар\nОбъём: 400мл\nСтоимость: 105 ₽', reply_markup=inmenu)
             
@@ -258,13 +255,10 @@ def bot_message(message):
 def check_callback(callback):
     if callback.data == "btn_add":
         bot.send_message(callback.message.chat.id, "Товар добавлен в корзину!")
-        
-        
-        
+
+
     
-       
-       
-       
+    
      #bot.send_message(message.chat.id, '🍟  Снэки', reply_markup = markup)   
 # parse_mode='html'  \\\\\ можно юзать подчеркивание, жирный текст, это вставляй : bot.send_message(chat.chat.id, 'Привет!', СУДА)
 bot.polling(none_stop=True)
