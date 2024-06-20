@@ -45,9 +45,6 @@ def main(message):
 
 @bot.message_handler(content_types=['text'])
 def bot_message(message):
-   # меню id, кол-во, цена  
-   
-    cart = [[1,2,3,4,5],[2,3,4,2,1],[100,200,1500,1000,500]]
     
     if message.chat.type == 'private':
         if message.text == 'ℹ️  О нас':
