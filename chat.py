@@ -72,18 +72,18 @@ def bot_message(message):
         elif message.text == 'Удалить всё':
             bot.send_message(message.chat.id, 'Корзина очищена!')
 
-            HOST = ('26.134.159.187', 10000)
+            # HOST = ('26.134.159.187', 10000)
 
-            client = socket(AF_INET, SOCK_STREAM)
-            client.connect(HOST)
+            # client = socket(AF_INET, SOCK_STREAM)
+            # client.connect(HOST)
 
-            name = bytes(message.from_user.username, 'utf8')
+            # name = bytes(message.from_user.username, 'utf8')
 
-            sent = 0
-            request = b'4 ' + name
-            while sent < len(request):
-                sent = sent + client.send(request[sent:])
-            print('отправил4')
+            # sent = 0
+            # request = b'4 ' + name
+            # while sent < len(request):
+            #     sent = sent + client.send(request[sent:])
+            # print('отправил4')
 
 
         elif message.text == '🛒  Корзина':
@@ -115,7 +115,6 @@ def bot_message(message):
                 q = menuKostil[int(i)].split(';')
                 zakaz = zakaz + q[0] + '\n'
                 price+=int(q[1])
-
             bot.send_message(message.chat.id, 'Ваш заказ:\n\n'+zakaz+'\nИТОГ: '+str(price)+' Р', reply_markup=markup)
 
 
