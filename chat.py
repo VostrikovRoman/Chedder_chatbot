@@ -66,10 +66,28 @@ def bot_message(message):
             markup.add(btn_pizza, btn_drinks, btn_snack, btn_back)
             bot.send_message(message.chat.id, '📖  Меню', reply_markup=markup)
 
+        elif message.text == 'Купить':
+            bot.send_message(message.chat.id, 'Покупка совершена!')
+
+            HOST = ('26.134.159.187', 10000)
+
+            client = socket(AF_INET, SOCK_STREAM)
+            client.connect(HOST)
+
+            name = bytes(message.from_user.username, 'utf8')
+
+            sent = 0
+            request = b'4 ' + name
+            while sent < len(request):
+                sent = sent + client.send(request[sent:])
+            print('отправил4')
+
+
         elif message.text == '🛒  Корзина':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn_back = types.KeyboardButton('🔙  Назад')
-            markup.add(btn_back)
+            btn_pay = types.KeyboardButton('Купить')
+            markup.add(btn_back, btn_pay)
 
             HOST = ('26.134.159.187', 10000)
 
