@@ -68,6 +68,9 @@ def bot_message(message):
 
         elif message.text == 'Купить':
             bot.send_message(message.chat.id, 'Покупка совершена!')
+        
+        elif message.text == 'Удалить всё':
+            bot.send_message(message.chat.id, 'Корзина очищена!')
 
             HOST = ('26.134.159.187', 10000)
 
@@ -87,7 +90,8 @@ def bot_message(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn_back = types.KeyboardButton('🔙  Назад')
             btn_pay = types.KeyboardButton('Купить')
-            markup.add(btn_back, btn_pay)
+            btn_del = types.KeyboardButton('Удалить всё')
+            markup.add(btn_back, btn_pay, btn_del)
 
             HOST = ('26.134.159.187', 10000)
 
