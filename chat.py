@@ -113,7 +113,7 @@ def bot_message(message):
             price = 0
             for i in msg2:
                 q = menuKostil[int(i)].split(';')
-                zakaz = zakaz + q[0] + '\n'
+                zakaz = zakaz + q[0] + ' - - - ' + int(q[1])+ '\n'
                 price+=int(q[1])
             bot.send_message(message.chat.id, 'Ваш заказ:\n\n'+zakaz+'\nИТОГ: '+str(price)+' Р', reply_markup=markup)
 
